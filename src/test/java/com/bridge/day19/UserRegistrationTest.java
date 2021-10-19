@@ -29,4 +29,15 @@ public class UserRegistrationTest {
         Assert.assertEquals(false, result);
 
     }
+    @Test
+    public void givenEmail_WhenProper_ShouldReturnTrue() {
+        boolean result = userRegistration.email("sangeetamath15@gmail.com");
+        Assert.assertEquals(true, result);
+    }
+
+    @Test
+    public void givenEmail_WhenNotProper_ShouldReturnFalse() {
+        boolean result = userRegistration.email("sangeetamath&12.com");
+        Assert.assertEquals(false, result);
+    }
 }
