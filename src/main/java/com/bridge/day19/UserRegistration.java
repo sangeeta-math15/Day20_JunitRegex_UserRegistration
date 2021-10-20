@@ -46,5 +46,17 @@ public class UserRegistration {
         Matcher matcher = pattern.matcher(password2);
         return matcher.matches();
     }
+
+    public boolean passwordRule3(String passwordRule3) {
+        String regex="^(?=.*[A-Z]){1}(?=.*[a-z])(?=.*[0-9]).{1,}$";
+        Pattern pattern=Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(passwordRule3);
+        return  matcher.matches();
+    }
+
+
+
+
+
 }
 

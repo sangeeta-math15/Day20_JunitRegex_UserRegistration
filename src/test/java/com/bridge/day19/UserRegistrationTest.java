@@ -62,7 +62,7 @@ public class UserRegistrationTest {
     }
 
     @Test
-    public void givenPasswordRule2_WhenProper_ShouldReturnFalse(){
+    public void givenPasswordRule2_WhenProper_ShouldReturnTrue(){
         boolean result=userRegistration.password2("Sang@123");
         Assert.assertEquals(true,result);
     }
@@ -70,5 +70,16 @@ public class UserRegistrationTest {
     public void givenPasswordRule2_WhenNotProper_ShouldReturnFalse(){
         boolean result=userRegistration.password2("sang@123");
         Assert.assertEquals(false,result);
+    }
+    @Test
+    public void givenPasswordRule3_WhenProper_ShouldReturnTrue(){
+        boolean result=userRegistration.passwordRule3("sangeeta@123");
+        Assert.assertEquals(true,result);
+    }
+    @Test
+    public void givenPasswordRule3_WhenNotProper_ShouldReturnFalse(){
+        boolean result=userRegistration.passwordRule3("sa@ng");
+        Assert.assertEquals(false,result);
+
     }
 }
